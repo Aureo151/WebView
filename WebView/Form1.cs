@@ -124,6 +124,7 @@ namespace WebView
             {
                 var historial = File.ReadAllLines(historialFile);
                 comboBox2.Items.AddRange(historial);
+                ;
             }
         }
     }
