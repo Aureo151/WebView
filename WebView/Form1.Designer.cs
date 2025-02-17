@@ -37,6 +37,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnIr = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
@@ -66,21 +67,21 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // haciaAtrásToolStripMenuItem
             // 
             this.haciaAtrásToolStripMenuItem.Name = "haciaAtrásToolStripMenuItem";
-            this.haciaAtrásToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.haciaAtrásToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.haciaAtrásToolStripMenuItem.Text = "Hacia Atrás";
             this.haciaAtrásToolStripMenuItem.Click += new System.EventHandler(this.haciaAtrásToolStripMenuItem_Click);
             // 
             // haciaDelanteToolStripMenuItem
             // 
             this.haciaDelanteToolStripMenuItem.Name = "haciaDelanteToolStripMenuItem";
-            this.haciaDelanteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.haciaDelanteToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.haciaDelanteToolStripMenuItem.Text = "Hacia Delante";
             this.haciaDelanteToolStripMenuItem.Click += new System.EventHandler(this.haciaDelanteToolStripMenuItem_Click);
             // 
@@ -99,17 +100,11 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "https://www.google.com",
-            "https://virtual.mesoamericana.edu.gt/my/courses.php",
-            "https://www.amazon.es/ref=nav_logo",
-            "https://chatgpt.com",
-            "https://www.umes.edu.gt",
-            "https://www.youtube.com",
-            "gato",
-            "www.google.com"});
+            "www.youtube.com",
+            "www.chatgpt.com"});
             this.comboBox1.Location = new System.Drawing.Point(0, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(621, 24);
+            this.comboBox1.Size = new System.Drawing.Size(298, 24);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -130,11 +125,20 @@
             this.btnIr.UseVisualStyleBackColor = true;
             this.btnIr.Click += new System.EventHandler(this.btnIr_Click);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(304, 39);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(317, 24);
+            this.comboBox2.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 637);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.btnIr);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.comboBox1);
@@ -163,6 +167,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnIr;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

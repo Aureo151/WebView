@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WebView
 {
     public partial class Form1 : Form
     {
+        private readonly string historialFile = @"../../historial.txt";
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +30,14 @@ namespace WebView
         private void Form1_Load(object sender, EventArgs e)
         {
             webView21.Source = new Uri("https://www.google.com");
+            CargarHistorial();
+
         }
 
         private void btnIr_Click(object sender, EventArgs e)
         {
             NavegarDesdeTextBox();
+            
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,6 +73,7 @@ namespace WebView
             string url = ObtenerURLValida(txtDireccion.Text);
             webView21.Source = new Uri(url);
             txtDireccion.Text = url;
+            Guardar(url);
         }
 
         private string ObtenerURLValida(string entrada)
@@ -84,6 +92,39 @@ namespace WebView
             }
 
             return entrada;
+        }
+        private void Guardar(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url)) return;
+
+            List<string> historial = new List<string>();
+
+            if (File.Exists(historialFile))
+            {
+                historial = File.ReadAllLines(historialFile).ToList();
+            }
+
+            historial.Remove(url);
+            historial.Insert(0, url);
+
+            if (historial.Count > 10)
+            {
+                historial = historial.Take(10).ToList();
+            }
+
+            File.WriteAllLines(historialFile, historial);
+            CargarHistorial();
+
+        }
+        private void CargarHistorial()
+        {
+            comboBox2.Items.Clear();
+
+            if (File.Exists(historialFile))
+            {
+                var historial = File.ReadAllLines(historialFile);
+                comboBox2.Items.AddRange(historial);
+            }
         }
     }
 }
